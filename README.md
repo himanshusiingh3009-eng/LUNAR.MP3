@@ -17,7 +17,7 @@ Since this is an independent project, you'll link it to your own account with a 
 
 ### STEP 1 - Download the app
 Grab it here: [Download LUNAR.MP3]
-https://github.com/himanshusiingh3009-eng/lunar-mp3/releases/latest/download/LUNAR.MP3-Setup.exe
+https://github.com/himanshusiingh3009-eng/LUNAR.MP3/releases/latest/download/LUNAR.MP3-Setup.exe
 
 ⚠️ Note: since this is an indie, unsigned app (no paid code-signing certificate), Windows SmartScreen will likely show a blue warning the first time you open it. That's normal. Click "More info" → "Run anyway". Your computer is safe - this just means Microsoft doesn't recognize the publisher yet, not that anything's wrong.
 
