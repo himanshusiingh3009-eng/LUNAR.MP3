@@ -1,0 +1,94 @@
+.spectral-visualizer-block {
+  margin-top: 18px;
+}
+
+.spectral-visualizer__header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+.spectral-visualizer__label {
+  font-size: 12px;
+  letter-spacing: 0.15em;
+  color: var(--text-muted);
+  opacity: 0.7;
+}
+
+.spectral-visualizer__live-toggle {
+  background: transparent;
+  border: 1px solid var(--panel-border);
+  color: var(--text-muted);
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  padding: 2px 6px;
+}
+
+.spectral-visualizer__live-toggle[aria-pressed='true'] {
+  color: var(--status-playing);
+  border-color: var(--status-playing);
+}
+
+.spectral-visualizer__error {
+  font-size: 11px;
+  color: var(--status-error);
+  margin: 0 0 6px;
+}
+
+.spectral-visualizer {
+  height: 44px;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 2px;
+}
+
+.spectral-visualizer__bar {
+  flex: 1 1 0;
+  min-width: 2px;
+  background: linear-gradient(to top, var(--visualizer-bar), transparent 140%);
+  box-shadow: 0 0 6px var(--accent-glow);
+  border-radius: 1px;
+  animation: pulse 1.6s ease-in-out infinite;
+}
+
+.spectral-visualizer--playing .spectral-visualizer__bar {
+  animation-play-state: running;
+}
+
+.spectral-visualizer--paused {
+  opacity: 0.45;
+  filter: saturate(0.5);
+}
+
+.spectral-visualizer--paused .spectral-visualizer__bar {
+  animation-play-state: paused;
+}
+
+/* Live mode: height is driven every frame by real FFT data via JS,
+   so the CSS pulse animation is turned off to avoid the two fighting
+   each other — a short height transition smooths the raw per-frame
+   steps without adding noticeable lag. */
+.spectral-visualizer--live .spectral-visualizer__bar {
+  animation: none;
+  transition: height 0.05s linear;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scaleY(0.85);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .spectral-visualizer__bar {
+    animation: none;
+  }
+}

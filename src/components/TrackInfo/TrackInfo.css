@@ -1,0 +1,43 @@
+.track-info {
+  margin-top: 16px;
+  min-width: 0;
+}
+
+.track-info__field {
+  margin-bottom: 8px;
+}
+
+.track-info__label {
+  display: block;
+  font-size: 12px;
+  letter-spacing: 0.15em;
+  color: var(--text-muted);
+  opacity: 0.7;
+  margin-bottom: 2px;
+}
+
+.track-info__title,
+.track-info__artist,
+.track-info__album {
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.track-info__title {
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--text);
+  letter-spacing: 0.01em;
+}
+
+.track-info__artist {
+  font-size: 16px;
+  color: var(--accent);
+}
+
+.track-info__album {
+  font-size: 14px;
+  color: var(--text-muted);
+}

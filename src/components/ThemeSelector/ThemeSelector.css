@@ -1,0 +1,22 @@
+.theme-selector {
+  background: transparent;
+  border: 1px solid var(--panel-border);
+  color: var(--text-muted);
+  font-family: var(--font-ui);
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  padding: 5px 8px;
+  cursor: pointer;
+}
+
+.theme-selector:hover,
+.theme-selector:focus-visible {
+  color: var(--accent);
+  border-color: var(--accent);
+  outline: none;
+}
+
+.theme-selector option {
+  background: var(--bg);
+  color: var(--text);
+}

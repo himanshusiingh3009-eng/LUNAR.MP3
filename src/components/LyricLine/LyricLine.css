@@ -1,0 +1,36 @@
+.lyric-line {
+  padding: 6px 0;
+}
+
+.lyric-line__text {
+  margin: 0;
+  font-size: 19px;
+  line-height: 1.5;
+  transition: color 0.3s ease, opacity 0.3s ease;
+}
+
+.lyric-line--past .lyric-line__text {
+  color: var(--lyric-inactive);
+  opacity: 0.6;
+}
+
+.lyric-line--upcoming .lyric-line__text {
+  color: var(--lyric-inactive);
+  opacity: 0.85;
+}
+
+.lyric-line--active {
+  margin: 4px -32px;
+  padding: 8px 32px;
+  background: linear-gradient(to right, var(--accent-glow), transparent 85%);
+  border-left: 2px solid var(--accent);
+}
+
+.lyric-line--active .lyric-line__text {
+  font-family: var(--font-retro);
+  font-size: 28px;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  color: var(--lyric-active);
+  text-shadow: 0 0 10px var(--accent-glow);
+}

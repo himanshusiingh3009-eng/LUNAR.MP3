@@ -1,0 +1,164 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-mono);
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--accent-glow);
+  color: var(--bg);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar);
+  border-radius: 4px;
+}
+
+button {
+  font-family: var(--font-ui);
+  letter-spacing: 0.03em;
+  cursor: pointer;
+}
+
+.app-shell {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  background: radial-gradient(ellipse at top, var(--bg-secondary), var(--bg) 70%);
+}
+
+/* Short UI chrome — labels, badges, headers — reads more authentically
+   retro in the bitmap face than in the body-reading font. */
+.track-info__label,
+.spectral-visualizer__label,
+.lyrics-panel__header,
+.lyrics-panel__sync-badge,
+.status-indicator,
+.app-header__crt-toggle,
+.config-screen__subtitle,
+.connect-screen__subtitle {
+  font-family: var(--font-ui);
+  letter-spacing: 0.04em;
+}
+
+.app-main {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 1px;
+  min-height: 0;
+  padding: 20px;
+  padding-bottom: 0;
+}
+
+@media (max-width: 1024px) {
+  .app-main {
+    grid-template-columns: 300px 1fr;
+    padding: 14px;
+    padding-bottom: 0;
+  }
+}
+
+.panel {
+  border: 1px solid var(--panel-border);
+  background: color-mix(in srgb, var(--bg-secondary) 55%, transparent);
+  box-shadow: 0 0 24px rgba(0, 0, 0, 0.35) inset;
+}
+
+/* ---------- CRT overlay ---------- */
+
+.crt-overlay {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  mix-blend-mode: overlay;
+}
+
+.crt-overlay::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.035) 0px,
+    rgba(255, 255, 255, 0.035) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+}
+
+.crt-overlay::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  /* Plain, colorless vignette only — an earlier version added a
+     faint red/cyan chromatic-fringe tint here, but it was hardcoded
+     rather than theme-aware, so it visibly bled an off-theme color
+     cast into every theme (most noticeable as a purple-ish shift on
+     pink/warm themes). Removed rather than trying to theme-ify a
+     subtle effect that wasn't worth the complexity. */
+  background: radial-gradient(ellipse at center, transparent 55%, rgba(0, 0, 0, 0.45) 100%);
+}
+
+/* Screen noise/grain — a tiny animated static texture via an inline
+   SVG turbulence filter, kept extremely faint so it reads as analog
+   texture rather than visible interference. */
+.crt-noise {
+  pointer-events: none;
+  position: fixed;
+  inset: -4px;
+  z-index: 51;
+  opacity: 0.035;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  animation: crt-noise-shift 0.4s steps(2) infinite;
+}
+
+@keyframes crt-noise-shift {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(-2px, 1px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .crt-noise {
+    animation: none;
+  }
+}
+
+.crt-flicker {
+  animation: crt-flicker 6s infinite;
+}
+
+@keyframes crt-flicker {
+  0%, 96%, 100% { opacity: 1; }
+  97% { opacity: 0.985; }
+  98% { opacity: 0.995; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .crt-flicker {
+    animation: none;
+  }
+}

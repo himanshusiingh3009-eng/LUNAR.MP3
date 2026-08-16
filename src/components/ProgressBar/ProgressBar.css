@@ -1,0 +1,59 @@
+.progress-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 20px;
+  border-top: 1px solid var(--panel-border);
+}
+
+.progress-bar__time {
+  font-size: 15px;
+  color: var(--text-muted);
+  min-width: 38px;
+  text-align: center;
+}
+
+.progress-bar__track {
+  flex: 1;
+  -webkit-appearance: none;
+  appearance: none;
+  height: 8px;
+  border-radius: 0;
+  background-color: var(--progress-track);
+  background-image:
+    linear-gradient(to right, var(--progress-fill) var(--fill, 0%), transparent var(--fill, 0%)),
+    repeating-linear-gradient(
+      to right,
+      transparent 0,
+      transparent 3px,
+      var(--bg) 3px,
+      var(--bg) 4px
+    );
+  outline: none;
+}
+
+.progress-bar__track::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 3px;
+  height: 16px;
+  border-radius: 0;
+  background: var(--accent);
+  box-shadow: 0 0 8px var(--accent-glow);
+  cursor: pointer;
+}
+
+.progress-bar__track::-moz-range-thumb {
+  width: 3px;
+  height: 16px;
+  border: none;
+  border-radius: 0;
+  background: var(--accent);
+  box-shadow: 0 0 8px var(--accent-glow);
+  cursor: pointer;
+}
+
+.progress-bar__track:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}

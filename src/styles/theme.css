@@ -1,0 +1,341 @@
+/*
+  LUNAR.MP3 — theme tokens
+  Default theme: NEON PURPLE
+  Structured as CSS custom properties under [data-theme="neon-purple"]
+  so the theme system can add sibling blocks without touching any
+  component CSS.
+*/
+
+:root,
+[data-theme='neon-purple'] {
+  /* surfaces */
+  --bg: #0c0a18;
+  --bg-secondary: #15122a;
+  --panel-border: #3a3160;
+
+  /* text */
+  --text: #e9e4fb;
+  --text-muted: #857cae;
+
+  /* accent */
+  --accent: #b48cff;
+  --accent-soft: #8f6dd9;
+  --accent-glow: rgba(180, 140, 255, 0.55);
+
+  /* lyrics */
+  --lyric-active: #f3ecff;
+  --lyric-inactive: #5f5786;
+  --lyric-progress-fill: #b48cff;
+  --lyric-progress-track: #241d3f;
+
+  /* functional */
+  --visualizer-bar: #9d7fe6;
+  --progress-track: #241d3f;
+  --progress-fill: #b48cff;
+  --scrollbar: #3a3160;
+  --shadow: rgba(0, 0, 0, 0.6);
+
+  /* status */
+  --status-playing: #8fe6a8;
+  --status-paused: #e6c98f;
+  --status-error: #e68f8f;
+
+  /* type */
+  --font-mono: 'VT323', 'SFMono-Regular', ui-monospace, monospace;
+  --font-retro: 'VT323', var(--font-mono);
+  /* Silkscreen: true 8px-grid bitmap font — used for short UI chrome
+     (buttons, labels, headers) where a real pixel face reads best;
+     VT323 stays on body/lyrics text since it's more legible at length. */
+  --font-ui: 'Silkscreen', var(--font-mono);
+  --font-display: 'Press Start 2P', var(--font-mono);
+}
+
+/* ============ NEON PINK — vivid synthwave magenta ============ */
+[data-theme='neon-pink'] {
+  --bg: #0f0512;
+  --bg-secondary: #1e0a24;
+  --panel-border: #7a1f66;
+
+  --text: #ffe0f7;
+  --text-muted: #b357a0;
+
+  --accent: #ff2fb0;
+  --accent-soft: #e01f96;
+  --accent-glow: rgba(255, 47, 176, 0.55);
+
+  --lyric-active: #fff0fb;
+  --lyric-inactive: #7a3269;
+  --lyric-progress-fill: #ff2fb0;
+  --lyric-progress-track: #33103d;
+
+  --visualizer-bar: #ff2fb0;
+  --progress-track: #33103d;
+  --progress-fill: #ff2fb0;
+  --scrollbar: #7a1f66;
+  --shadow: rgba(0, 0, 0, 0.7);
+
+  --status-playing: #6af0d8;
+  --status-paused: #ffe66a;
+  --status-error: #ff6a6a;
+}
+
+/* ============ RED ============ */
+[data-theme='red'] {
+  --bg: #0e0303;
+  --bg-secondary: #1c0606;
+  --panel-border: #7a1f1f;
+
+  --text: #ffdede;
+  --text-muted: #a95c5c;
+
+  --accent: #ff3b3b;
+  --accent-soft: #d92b2b;
+  --accent-glow: rgba(255, 59, 59, 0.55);
+
+  --lyric-active: #fff0f0;
+  --lyric-inactive: #7a3232;
+  --lyric-progress-fill: #ff3b3b;
+  --lyric-progress-track: #330d0d;
+
+  --visualizer-bar: #ff3b3b;
+  --progress-track: #330d0d;
+  --progress-fill: #ff3b3b;
+  --scrollbar: #7a1f1f;
+  --shadow: rgba(0, 0, 0, 0.7);
+
+  --status-playing: #ffd23d;
+  --status-paused: #ffd23d;
+  --status-error: #ff3b3b;
+}
+
+/* ============ ROSE ============ */
+[data-theme='rose'] {
+  --bg: #130810;
+  --bg-secondary: #24101e;
+  --panel-border: #7a2f56;
+
+  --text: #ffe0ec;
+  --text-muted: #b57a99;
+
+  --accent: #ff6b9d;
+  --accent-soft: #e94f85;
+  --accent-glow: rgba(255, 107, 157, 0.55);
+
+  --lyric-active: #fff0f5;
+  --lyric-inactive: #7a4d61;
+  --lyric-progress-fill: #ff6b9d;
+  --lyric-progress-track: #3a1526;
+
+  --visualizer-bar: #ff6b9d;
+  --progress-track: #3a1526;
+  --progress-fill: #ff6b9d;
+  --scrollbar: #7a2f56;
+  --shadow: rgba(0, 0, 0, 0.7);
+
+  --status-playing: #8fe6c0;
+  --status-paused: #ffe08f;
+  --status-error: #ff6b6b;
+}
+
+/* ============ GREEN ============ */
+[data-theme='green'] {
+  --bg: #030a03;
+  --bg-secondary: #061206;
+  --panel-border: #1f5c1f;
+
+  --text: #c8ffc8;
+  --text-muted: #4f9a4f;
+
+  --accent: #39ff6a;
+  --accent-soft: #2bcf52;
+  --accent-glow: rgba(57, 255, 106, 0.55);
+
+  --lyric-active: #e6ffe6;
+  --lyric-inactive: #326b32;
+  --lyric-progress-fill: #39ff6a;
+  --lyric-progress-track: #123312;
+
+  --visualizer-bar: #39ff6a;
+  --progress-track: #123312;
+  --progress-fill: #39ff6a;
+  --scrollbar: #1f5c1f;
+  --shadow: rgba(0, 0, 0, 0.7);
+
+  --status-playing: #39ff6a;
+  --status-paused: #d4e66a;
+  --status-error: #ff6a6a;
+}
+
+/* ============ ORANGE ============ */
+[data-theme='orange'] {
+  --bg: #0e0803;
+  --bg-secondary: #1a0f05;
+  --panel-border: #6b3f14;
+
+  --text: #ffd9a0;
+  --text-muted: #a9793f;
+
+  --accent: #ff9a3d;
+  --accent-soft: #d97e2b;
+  --accent-glow: rgba(255, 154, 61, 0.55);
+
+  --lyric-active: #fff0d6;
+  --lyric-inactive: #7a5326;
+  --lyric-progress-fill: #ff9a3d;
+  --lyric-progress-track: #331f0c;
+
+  --visualizer-bar: #ff9a3d;
+  --progress-track: #331f0c;
+  --progress-fill: #ff9a3d;
+  --scrollbar: #6b3f14;
+  --shadow: rgba(0, 0, 0, 0.7);
+
+  --status-playing: #a8e66a;
+  --status-paused: #ff9a3d;
+  --status-error: #ff6a4d;
+}
+
+/* ============ BLUE ============ */
+[data-theme='blue'] {
+  --bg: #030614;
+  --bg-secondary: #071029;
+  --panel-border: #1c3a80;
+
+  --text: #d6e2ff;
+  --text-muted: #4f6fab;
+
+  --accent: #3d7bff;
+  --accent-soft: #2b5cd9;
+  --accent-glow: rgba(61, 123, 255, 0.55);
+
+  --lyric-active: #eaf1ff;
+  --lyric-inactive: #2c3f85;
+  --lyric-progress-fill: #3d7bff;
+  --lyric-progress-track: #0d1a3d;
+
+  --visualizer-bar: #3d7bff;
+  --progress-track: #0d1a3d;
+  --progress-fill: #3d7bff;
+  --scrollbar: #1c3a80;
+  --shadow: rgba(0, 0, 0, 0.7);
+
+  --status-playing: #6aeba0;
+  --status-paused: #ffd76a;
+  --status-error: #ff6a6a;
+}
+
+/* ============ CELESTE — pale sky blue ============ */
+[data-theme='celeste'] {
+  --bg: #030a10;
+  --bg-secondary: #071a24;
+  --panel-border: #2c6a80;
+
+  --text: #eaf8ff;
+  --text-muted: #6fa8bf;
+
+  --accent: #7dd3fc;
+  --accent-soft: #5bb8e6;
+  --accent-glow: rgba(125, 211, 252, 0.5);
+
+  --lyric-active: #f5fcff;
+  --lyric-inactive: #3a6a80;
+  --lyric-progress-fill: #7dd3fc;
+  --lyric-progress-track: #0d2733;
+
+  --visualizer-bar: #7dd3fc;
+  --progress-track: #0d2733;
+  --progress-fill: #7dd3fc;
+  --scrollbar: #2c6a80;
+  --shadow: rgba(0, 0, 0, 0.65);
+
+  --status-playing: #8fe6c0;
+  --status-paused: #ffe08f;
+  --status-error: #ff8f8f;
+}
+
+/* ============ AQUA — teal/cyan ============ */
+[data-theme='aqua'] {
+  --bg: #020e0c;
+  --bg-secondary: #051f1a;
+  --panel-border: #1c6a5c;
+
+  --text: #d6fff5;
+  --text-muted: #4fab97;
+
+  --accent: #2de0c8;
+  --accent-soft: #22b6a2;
+  --accent-glow: rgba(45, 224, 200, 0.55);
+
+  --lyric-active: #eafffb;
+  --lyric-inactive: #2c7a6a;
+  --lyric-progress-fill: #2de0c8;
+  --lyric-progress-track: #0d332c;
+
+  --visualizer-bar: #2de0c8;
+  --progress-track: #0d332c;
+  --progress-fill: #2de0c8;
+  --scrollbar: #1c6a5c;
+  --shadow: rgba(0, 0, 0, 0.7);
+
+  --status-playing: #2de0c8;
+  --status-paused: #ffd76a;
+  --status-error: #ff6a6a;
+}
+
+/* ============ DARK — moody, near-desaturated slate ============ */
+[data-theme='dark'] {
+  --bg: #08090b;
+  --bg-secondary: #101216;
+  --panel-border: #3a3f4a;
+
+  --text: #dfe2e8;
+  --text-muted: #6b7280;
+
+  --accent: #8b93a3;
+  --accent-soft: #6b7280;
+  --accent-glow: rgba(139, 147, 163, 0.4);
+
+  --lyric-active: #f0f1f4;
+  --lyric-inactive: #4a4f5a;
+  --lyric-progress-fill: #8b93a3;
+  --lyric-progress-track: #1f2228;
+
+  --visualizer-bar: #8b93a3;
+  --progress-track: #1f2228;
+  --progress-fill: #8b93a3;
+  --scrollbar: #3a3f4a;
+  --shadow: rgba(0, 0, 0, 0.8);
+
+  --status-playing: #8fe6a8;
+  --status-paused: #e6c98f;
+  --status-error: #e68f8f;
+}
+
+/* ============ MONOCHROME — classic black & white ============ */
+[data-theme='monochrome'] {
+  --bg: #0a0a0a;
+  --bg-secondary: #161616;
+  --panel-border: #4d4d4d;
+
+  --text: #f2f2f2;
+  --text-muted: #8c8c8c;
+
+  --accent: #ffffff;
+  --accent-soft: #cccccc;
+  --accent-glow: rgba(255, 255, 255, 0.4);
+
+  --lyric-active: #ffffff;
+  --lyric-inactive: #666666;
+  --lyric-progress-fill: #ffffff;
+  --lyric-progress-track: #2b2b2b;
+
+  --visualizer-bar: #d9d9d9;
+  --progress-track: #2b2b2b;
+  --progress-fill: #ffffff;
+  --scrollbar: #4d4d4d;
+  --shadow: rgba(0, 0, 0, 0.8);
+
+  --status-playing: #ffffff;
+  --status-paused: #b3b3b3;
+  --status-error: #ffffff;
+}

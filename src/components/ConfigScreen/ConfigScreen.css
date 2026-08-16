@@ -1,0 +1,109 @@
+.config-screen {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(ellipse at top, var(--bg-secondary), var(--bg) 70%);
+}
+
+.config-screen__panel {
+  width: 420px;
+  max-width: 90vw;
+  padding: 32px 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  box-shadow: 0 0 40px var(--accent-glow);
+}
+
+.config-screen__title {
+  font-family: var(--font-display);
+  font-size: 15px;
+  color: var(--accent);
+  text-shadow: 0 0 10px var(--accent-glow);
+  text-align: center;
+}
+
+.config-screen__subtitle {
+  text-align: center;
+  font-size: 14px;
+  letter-spacing: 0.15em;
+  color: var(--text-muted);
+  margin-bottom: 24px;
+}
+
+.config-screen__field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 16px;
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+}
+
+.config-screen__field input,
+.config-screen__field select {
+  background: var(--bg);
+  border: 1px solid var(--panel-border);
+  color: var(--text);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  padding: 10px 12px;
+}
+
+.config-screen__field input:focus,
+.config-screen__field select:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 10px var(--accent-glow);
+}
+
+.config-screen__help {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--text-muted);
+  margin: 0 0 16px;
+}
+
+.config-screen__help a {
+  color: var(--accent);
+}
+
+.config-screen__help--muted {
+  opacity: 0.75;
+}
+
+.config-screen__error {
+  border: 1px solid var(--status-error);
+  color: var(--status-error);
+  font-size: 15px;
+  padding: 10px 12px;
+  margin-bottom: 16px;
+  line-height: 1.5;
+}
+
+.config-screen__error-title {
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.config-screen__save {
+  background: transparent;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  padding: 12px;
+  font-size: 15px;
+  letter-spacing: 0.1em;
+  transition: box-shadow 0.15s ease;
+}
+
+.config-screen__save:hover {
+  box-shadow: 0 0 14px var(--accent-glow);
+}
+
+.config-screen__save:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
